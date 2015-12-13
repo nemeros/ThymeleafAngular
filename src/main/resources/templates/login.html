@@ -3,16 +3,7 @@
 	lang="fr" 
 	xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>User Management</title>
-
-    <!-- Bootstrap -->
-    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-  </head>
+  <head th:replace="fragments/header :: head"></head>
   <body>
   	<div class="container" style="margin-top:5em">
 	  	<form class="form-horizontal" action="/loginProcess" method="post">
@@ -36,6 +27,8 @@
 			  <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 	  	</form>
   	</div>
+  	
+  	<div th:replace="fragments/footer :: foot"></div>
   	
   	
   	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
